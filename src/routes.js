@@ -1,17 +1,25 @@
-import React from "react";
+import React, { Component } from "react";
 import { Route, Switch } from "react-router-dom";
-import App from "./components/App";
+import Landing from "./components/Landing";
 import Home from "./components/Home";
+
+import App from "./components/App";
 import About from "./components/About";
 
-const routes = (
-    // <App>
-    //   <Switch>
-    //     <Route exact path='/' component={Home} />
-    //     <Route path='/about' component={About} />
-    //   </Switch>
-    // </App>
-    <div>HELLO WORLD!</div>
-);
+class Routes extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {};
+    }
 
-export { routes };
+    render() {
+        return (
+            <Switch>
+                <Route exact path="/" component={Landing} />
+                <Route exact path="/home" component={Home} />
+            </Switch>
+        );
+    }
+}
+
+export default Routes;
