@@ -6,22 +6,29 @@ from flask_cors import CORS
 app = Flask(__name__, static_folder='../build')
 CORS(app)
 
+
+@app.route("/test")
+def test_route():
+    return "test"
+
 ##
 # API routes
 ##
 
+
 @app.route('/api/items')
 def items():
-  '''Sample API route for data'''
-  return jsonify([{'title': 'A'}, {'title': 'B'}])
+    '''Sample API route for data'''
+    return jsonify([{'title': 'A'}, {'title': 'B'}])
 
 ##
 # View route
 ##
 
+
 @app.route('/', defaults={'path': ''})
 @app.route('/<path:path>')
 def index(path):
-  '''Return index.html for all non-api routes'''
-  #pylint: disable=unused-argument
-  return send_from_directory(app.static_folder, 'index.html')
+    '''Return index.html for all non-api routes'''
+    #pylint: disable=unused-argument
+    return send_from_directory(app.static_folder, 'index.html')
