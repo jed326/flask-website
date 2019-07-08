@@ -11,7 +11,7 @@ class Landing extends Component {
     render() {
         return (
             <div className="landing-page">
-                <p>HELLO LANDING</p>
+                <div className="enter">ENTER WEBSITE BUTTON</div>
             </div>
         );
     }
