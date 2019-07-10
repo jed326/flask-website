@@ -7,6 +7,7 @@ import Routes from "./routes";
 import { ConnectedRouter } from "connected-react-router";
 import { BrowserRouter as Router } from "react-router-dom";
 import "./assets/styles/style";
+// import "antd/dist/antd.css";
 
 ReactDOM.render(
     <Router>

@@ -77,6 +77,20 @@ const common = {
                         options: {}
                     }
                 ]
+            },
+            {
+                test: /\.(less)$/,
+                use: [
+                    {
+                        loader: "style-loader" // creates style nodes from JS strings
+                    },
+                    {
+                        loader: "css-loader" // translates CSS into CommonJS
+                    },
+                    {
+                        loader: "less-loader" // compiles Less to CSS
+                    }
+                ]
             }
         ]
     },
@@ -140,7 +154,7 @@ const prodSettings = {
 const TARGET = process.env.npm_lifecycle_event;
 process.env.BABEL_ENV = TARGET;
 
-if (TARGET === "start") {
+if (TARGET === "start" || TARGET === "dev") {
     module.exports = merge(common, devSettings);
 }
 
