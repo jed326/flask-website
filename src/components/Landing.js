@@ -1,11 +1,20 @@
 import React, { Component } from "react";
 import { withRouter } from "react-router-dom";
-import { Typography } from "antd";
+import Typography from "@material-ui/core/Typography";
 import { makeStyles } from "@material-ui/core/styles";
 import Button from "@material-ui/core/Button";
 import { textAlign } from "@material-ui/system";
 
 import "../assets/styles/landing.css";
+// import "typeface-roboto";
+
+/*
+TODO:
+[ ] Need to add a file loader to the webpack -- https://chriscourses.com/blog/loading-fonts-webpack
+[ ] Add CSS styling to the enter button
+[ ] Add social media icons to the bottom of the page
+[ ] Add onClick functionality to enter button
+*/
 
 const classes = makeStyles(theme => ({
     button: {
@@ -13,6 +22,10 @@ const classes = makeStyles(theme => ({
     },
     input: {
         display: "none"
+    },
+    root: {
+        width: "100%",
+        maxWidth: 500
     }
 }));
 
@@ -29,16 +42,13 @@ class Landing extends Component {
         return (
             <div className="landing-page">
                 <div className="landing-center">
-                    <Title
-                        className="landing-text"
-                        style={{
-                            color: "white",
-                            fontSize: "86px",
-                            fontFamily: "Roboto"
-                        }}
+                    <Typography
+                        variant="h1"
+                        gutterBottom
+                        style={{ color: "white" }}
                     >
                         Jay Deng
-                    </Title>
+                    </Typography>
                     <div
                         style={{
                             position: "relative",
@@ -50,7 +60,10 @@ class Landing extends Component {
                             variant="outlined"
                             color="primary"
                             className={classes.button}
-                            style={{ paddingLeft: 35, paddingRight: 35 }}
+                            style={{
+                                paddingLeft: 35,
+                                paddingRight: 35
+                            }}
                         >
                             Enter
                         </Button>
