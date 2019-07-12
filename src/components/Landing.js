@@ -13,7 +13,8 @@ TODO:
 [ ] Need to add a file loader to the webpack -- https://chriscourses.com/blog/loading-fonts-webpack
 [ ] Add CSS styling to the enter button
 [ ] Add social media icons to the bottom of the page
-[ ] Add onClick functionality to enter button
+[X] Add onClick functionality to enter button
+[ ] Add loading screen in between React component pages
 */
 
 const classes = makeStyles(theme => ({
@@ -37,6 +38,10 @@ class Landing extends Component {
     constructor(props) {
         super(props);
     }
+
+    onclick = e => {
+        this.props.history.push("/home");
+    };
 
     render() {
         return (
@@ -64,6 +69,7 @@ class Landing extends Component {
                                 paddingLeft: 35,
                                 paddingRight: 35
                             }}
+                            onClick={this.onclick}
                         >
                             Enter
                         </Button>
