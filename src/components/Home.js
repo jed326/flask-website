@@ -9,10 +9,12 @@ import ListItemIcon from "@material-ui/core/ListItemIcon";
 import ListItemText from "@material-ui/core/ListItemText";
 import InboxIcon from "@material-ui/icons/MoveToInbox";
 import MailIcon from "@material-ui/icons/Mail";
+// import Grid from "@material-ui/core/Grid";
+import { Row, Col } from "antd";
 
 const classes = makeStyles({
     list: {
-        width: 250
+        width: 350
     },
     fullList: {
         width: "auto"
@@ -76,17 +78,21 @@ class Home extends Component {
 
     render() {
         return (
-            <div style={{ textAlign: "center" }}>
-                <Button onClick={this.toggleDrawer("left", true)}>
-                    Open Left
-                </Button>
-                <Drawer
-                    open={this.state.left}
-                    onClose={this.toggleDrawer("left", false)}
-                >
-                    {this.sideList("left")}
-                </Drawer>
-            </div>
+            <React.Fragment>
+                <Row>
+                    <div style={{ textAlign: "center" }}>
+                        <Button onClick={this.toggleDrawer("left", true)}>
+                            Open Left
+                        </Button>
+                        <Drawer
+                            open={this.state.left}
+                            onClose={this.toggleDrawer("left", false)}
+                        >
+                            {this.sideList("left")}
+                        </Drawer>
+                    </div>
+                </Row>
+            </React.Fragment>
         );
     }
 }
